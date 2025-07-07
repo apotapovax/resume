@@ -147,6 +147,60 @@ nav ul li a:hover::after {
     width: 100%;
 }
 
+/* Mobile Navigation */
+@media (max-width: 768px) {
+    header {
+        position: relative;
+    }
+
+    nav {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    nav ul {
+        padding: 15px 0;
+        flex-wrap: nowrap;
+        justify-content: flex-start;
+        min-width: min-content;
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+
+    nav ul li {
+        margin: 0 10px;
+        white-space: nowrap;
+    }
+
+    nav ul li:first-child {
+        margin-left: 0;
+    }
+
+    nav ul li:last-child {
+        margin-right: 0;
+    }
+
+    /* Adjust section padding to account for relative header */
+    .section {
+        padding: 60px 0;
+    }
+
+    .hero-section {
+        min-height: calc(100vh - 60px);
+        padding-top: 40px;
+    }
+
+    /* Hide scrollbar but keep functionality */
+    nav::-webkit-scrollbar {
+        display: none;
+    }
+    
+    nav {
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+}
+
 /* Hero Section */
 .hero-section {
     min-height: 100vh;
