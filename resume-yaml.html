@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex Potapov - Resume YAML</title>
+    <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #1e1e1e;
+            --text-color: #d4d4d4;
+            --keyword-color: #569cd6;
+            --string-color: #ce9178;
+            --number-color: #b5cea8;
+            --comment-color: #6a9955;
+            --sidebar-width: 200px;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            font-family: 'JetBrains Mono', monospace;
+            line-height: 1.6;
+            margin: 0;
+            padding: 0;
+            display: flex;
+        }
+
+        .sidebar {
+            width: var(--sidebar-width);
+            background-color: #252526;
+            padding: 20px;
+            position: fixed;
+            height: 100vh;
+            overflow-y: auto;
+            border-right: 1px solid #333;
+        }
+
+        .sidebar h2 {
+            font-size: 1rem;
+            color: var(--keyword-color);
+            margin-top: 0;
+            margin-bottom: 15px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .sidebar li {
+            margin-bottom: 8px;
+        }
+
+        .sidebar a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-size: 0.9rem;
+            display: block;
+            padding: 4px 8px;
+            border-radius: 4px;
+            transition: background-color 0.2s;
+        }
+
+        .sidebar a:hover {
+            background-color: #2d2d2d;
+            color: var(--keyword-color);
+        }
+
+        .sidebar .sub-item {
+            padding-left: 15px;
+            font-size: 0.85rem;
+            color: var(--comment-color);
+        }
+
+        .container {
+            flex: 1;
+            margin-left: var(--sidebar-width);
+            padding: 20px;
+        }
+
+        pre {
+            background-color: #252526;
+            border-radius: 5px;
+            margin: 0;
+            padding: 20px;
+            position: relative;
+            counter-reset: line;
+            white-space: pre;
+            overflow-x: auto;
+        }
+
+        code {
+            display: block;
+            padding-left: 60px;
+            min-width: fit-content;
+        }
+
+        code > span {
+            display: block;
+        }
+
+        code > span::before {
+            counter-increment: line;
+            content: counter(line);
+            position: absolute;
+            left: 0;
+            width: 40px;
+            padding-right: 10px;
+            text-align: right;
+            color: #858585;
+            border-right: 1px solid #333;
+        }
+
+        .keyword {
+            color: var(--keyword-color);
+        }
+
+        .string {
+            color: var(--string-color);
+        }
+
+        .number {
+            color: var(--number-color);
+        }
+
+        .back-link {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            background-color: #0078d4;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            z-index: 1000;
+        }
+
+        .back-link:hover {
+            background-color: #106ebe;
+        }
+
+        .top-links {
+            position: fixed;
+            top: 20px;
+            right: 20px;
+            display: flex;
+            gap: 10px;
+            z-index: 1000;
+        }
+
+        .pdf-link {
+            background-color: #dc2626;
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            font-size: 14px;
+            transition: background-color 0.3s;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .pdf-link:hover {
+            background-color: #b91c1c;
+        }
+
+        @media (max-width: 1024px) {
+            :root {
+                --sidebar-width: 160px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            body {
+                flex-direction: column;
+            }
+
+            .sidebar {
+                width: 100%;
+                height: auto;
+                position: relative;
+                border-right: none;
+                border-bottom: 1px solid #333;
+                padding: 10px;
+            }
+
+            .container {
+                margin-left: 0;
+                padding: 10px;
+            }
+
+            pre {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <nav class="sidebar">
+        <h2>Quick Navigation</h2>
+        <ul>
+            <li><a href="#personal_info">Personal Info</a></li>
+            <li><a href="#about">About</a></li>
+            <li>
+                <a href="#experience">Experience</a>
+                <ul class="sub-item">
+                    <li>FedEx DataWorks (2020-Present)</li>
+                    <li>Renessans-Roaming (2019-2020)</li>
+                    <li>STEP (2013-2019)</li>
+                </ul>
+            </li>
+            <li>
+                <a href="#technical_skills">Technical Skills</a>
+                <ul class="sub-item">
+                    <li>Cloud Platforms</li>
+                    <li>CI/CD</li>
+                    <li>Infrastructure as Code</li>
+                    <li>Containerization</li>
+                    <li>Observability</li>
+                    <li>Programming</li>
+                </ul>
+            </li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#education">Education</a></li>
+        </ul>
+    </nav>
+    <div class="container">
+        <div class="top-links">
+            <a href="index.html" class="back-link">← Back to Resume</a>
+            <a href="assets/resume_potapov_a_2025.pdf" class="pdf-link" download><i class="fas fa-file-pdf"></i> Download PDF</a>
+        </div>
+        <pre><code id="yamlContent"></code></pre>
+    </div>
+    <script>
+        fetch('resume.yaml')
+            .then(response => response.text())
+            .then(yaml => {
+                const yamlContent = document.getElementById('yamlContent');
+                
+                // Split the YAML into lines and wrap each line in a span
+                const highlightedYaml = yaml.split('\n').map(line => {
+                    // Add id attributes to main sections
+                    let sectionMatch = line.match(/^(\w+):/);
+                    if (sectionMatch) {
+                        return `<span id="${sectionMatch[1]}">${line
+                            .replace(/^(\s*)([\w_]+):/g, '$1<span class="keyword">$2</span>:')
+                            .replace(/: (.+)$/g, ': <span class="string">$1</span>')
+                            .replace(/: (\d+)$/g, ': <span class="number">$1</span>')
+                            .replace(/^(\s*)-/g, '$1<span class="keyword">-</span>')}</span>`;
+                    }
+                    return `<span>${line
+                        .replace(/^(\s*)([\w_]+):/g, '$1<span class="keyword">$2</span>:')
+                        .replace(/: (.+)$/g, ': <span class="string">$1</span>')
+                        .replace(/: (\d+)$/g, ': <span class="number">$1</span>')
+                        .replace(/^(\s*)-/g, '$1<span class="keyword">-</span>')}</span>`;
+                }).join('\n');
+                
+                yamlContent.innerHTML = highlightedYaml;
+            });
+    </script>
+</body>
+</html> 

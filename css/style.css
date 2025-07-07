@@ -16,6 +16,79 @@
     --transition: all 0.3s ease;
 }
 
+/* Animated Title Styles */
+.animated-title {
+    display: inline-block;
+    position: relative;
+    min-width: 80px;
+}
+
+.animated-title::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    width: 0;
+    height: 2px;
+    background: #ff3b3b;
+    animation: strike 6s steps(1, end) infinite;
+}
+
+.animated-title span {
+    visibility: hidden;
+}
+
+.animated-title::after {
+    content: 'DevOps';
+    visibility: visible;
+    position: absolute;
+    left: 0;
+    animation: cycleText 6s steps(1, end) infinite;
+    white-space: nowrap;
+}
+
+/* Make the container adapt to the animated content */
+h2 {
+    display: flex;
+    align-items: center;
+    gap: 0.5em;  /* Add consistent spacing between words */
+    flex-wrap: nowrap;  /* Prevent wrapping */
+}
+
+@keyframes strike {
+    0%, 31% {
+        width: 0;
+    }
+    32%, 33% {
+        width: 100%;
+    }
+    34%, 64% {
+        width: 0;
+    }
+    65%, 66% {
+        width: 100%;
+    }
+    67%, 97% {
+        width: 0;
+    }
+    98%, 100% {
+        width: 100%;
+    }
+}
+
+@keyframes cycleText {
+    0%, 33% {
+        content: 'DevOps';
+    }
+    34%, 66% {
+        content: 'SRE';
+    }
+    67%, 100% {
+        content: 'Cloud';
+    }
+}
+
 body {
     font-family: 'Poppins', sans-serif;
     line-height: 1.6;
@@ -87,6 +160,13 @@ nav ul li a:hover::after {
 
 .profile-area {
     margin-bottom: 30px;
+    width: 100%;
+}
+
+.profile-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
 .profile-text h1 {
@@ -102,6 +182,12 @@ nav ul li a:hover::after {
     font-size: 1.8rem;
     color: var(--light-text);
     margin-bottom: 20px;
+    text-align: center;
+    white-space: nowrap;
+}
+
+.profile-text h2 span {
+    display: inline-block;
 }
 
 .tagline {
@@ -358,18 +444,28 @@ nav ul li a:hover::after {
 .social-links {
     display: flex;
     justify-content: center;
-    gap: 30px;
+    gap: 20px;
+    margin-top: 20px;
 }
 
 .social-links a {
-    color: var(--text-color);
+    color: var(--primary-color);
     font-size: 1.5rem;
     transition: var(--transition);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(5px);
 }
 
 .social-links a:hover {
-    color: var(--primary-color);
-    transform: translateY(-3px);
+    color: var(--secondary-color);
+    transform: translateY(-2px);
+    background-color: rgba(255, 255, 255, 0.2);
 }
 
 /* Footer */
@@ -429,6 +525,60 @@ footer {
 .cert-year {
     color: var(--primary-color);
     font-weight: 500;
+}
+
+.format-links {
+    margin-top: 20px;
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.format-links a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.yaml-link {
+    margin-top: 20px;
+}
+
+.yaml-link a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background-color: var(--primary-color);
+    color: white;
+    text-decoration: none;
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    transition: var(--transition);
+}
+
+.yaml-link a:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-2px);
+}
+
+.pdf-link {
+    background-color: #dc2626;
+    color: white;
+}
+
+.pdf-link:hover {
+    background-color: #b91c1c;
+    transform: translateY(-2px);
+}
+
+.yaml-link i {
+    font-size: 1rem;
 }
 
 /* Responsive Design */

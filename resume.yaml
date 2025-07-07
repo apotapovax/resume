@@ -1,0 +1,115 @@
+personal_info:
+  name: Alex Potapov
+  title: Senior DevOps Engineer
+  email: alexpotapov87@gmail.com
+  linkedin: https://linkedin.com/in/alex-potapov
+  tagline: Building scalable cloud infrastructure and AI-powered solutions
+
+about: >
+  Highly accomplished Senior DevOps Engineer with extensive experience in designing, implementing, 
+  and optimizing robust cloud and on-premise infrastructures. Proven expertise in ensuring the stability, 
+  performance, and security of mission-critical environments through advanced administration, automation, 
+  containerization, and comprehensive monitoring. Adept at troubleshooting complex real-time issues, 
+  driving efficiency, and fostering strong collaboration and documentation practices.
+
+experience:
+  fedex_dataworks:
+    name: FedEx DataWorks
+    division: ShopRunner
+    period: 2020 - Present
+    role: Senior DevOps Engineer III
+    achievements:
+      - Spearheaded end-to-end AI-powered software development projects using tools like Cursor
+      - Deployed and managed Model Context Protocol (MCP) servers for AI model integration
+      - Architected and implemented scalable CI templating solutions using GitHub Actions, supporting continuous integration for hundreds of production organization repositories
+      - Implemented advanced ChatOps and GitOps automations
+    technologies:
+      - AWS
+      - Azure
+      - Kubernetes
+      - Terraform
+      - GitHub Actions
+
+  renessans_roaming:
+    name: Renessans-Roaming
+    period: 2019 - 2020
+    role: DevOps Engineer
+    achievements:
+      - Led automation of development, testing, and software integration processes
+      - Managed stable product releases and system health monitoring
+      - Implemented cloud solutions across AWS, GCP, and Azure
+      - Enhanced system performance and security through continuous monitoring
+    technologies:
+      - GCP
+      - AWS
+      - Docker
+      - Kubernetes
+      - Jenkins
+
+  step:
+    name: STEP
+    period: 2013 - 2019
+    role: Senior System Administrator
+    achievements:
+      - Built complete server infrastructure for 400+ users from ground up
+      - Led team of 7 system administrators across multiple locations
+      - Implemented HA VMware multicluster geo-allocated infrastructure
+      - Managed Windows/Linux systems and core infrastructure components
+
+technical_skills:
+  cloud_platforms:
+    - AWS
+    - Azure
+    - GCP
+    - Cloudflare
+
+  ci_cd:
+    - GitHub Actions
+    - Jenkins
+    - ArgoCD
+    - CircleCI
+
+  infrastructure_as_code:
+    - Terraform
+    - Terragrunt
+    - CrossPlane
+    - Helm
+
+  containerization:
+    - Kubernetes
+    - Docker
+    - EKS
+    - GKE
+
+  observability:
+    - Prometheus
+    - Datadog
+    - Grafana
+    - SumoLogic
+
+  programming:
+    - Python
+    - Bash
+    - PowerShell
+
+certifications:
+  aws_devops:
+    name: AWS DevOps Engineer
+    year: 2021
+  
+  cisco_icnd2:
+    name: Cisco ICND2
+    year: 2019
+  
+  rhel7:
+    name: RHEL7 (RH134)
+    year: 2019
+  
+  ms_20742:
+    name: Microsoft 20742
+    year: 2018
+
+education:
+  institution: SPBGUAP
+  degree: Computer Systems and Networks
+  period: 2006 - 2010 
