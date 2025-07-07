@@ -21,7 +21,8 @@ experience:
     achievements:
       - Spearheaded end-to-end AI-powered software development projects using tools like Cursor
       - Deployed and managed Model Context Protocol (MCP) servers for AI model integration
-      - Architected and implemented scalable CI templating solutions using GitHub Actions, supporting continuous integration for hundreds of production organization repositories
+      - Managed enterprise-scale Kubernetes infrastructure spanning hundreds of clusters and thousands of microservices
+      - Designed and implemented enterprise-wide CI/CD templating framework with GitHub Actions, streamlining development across hundreds of production repositories
       - Implemented advanced ChatOps and GitOps automations
     technologies:
       - AWS
@@ -65,34 +66,70 @@ technical_skills:
 
   ci_cd:
     - GitHub Actions
+    - Azure DevOps
     - Jenkins
     - ArgoCD
     - CircleCI
+    - Spinnaker
 
   infrastructure_as_code:
     - Terraform
     - Terragrunt
     - CrossPlane
     - Helm
+    - Ansible
 
   containerization:
-    - Kubernetes
+    - Kubernetes (EKS, AKS, GKE)
     - Docker
-    - EKS
-    - GKE
+    - Docker Compose
+
+  ai:
+    - NVIDIA GPU Operators
+    - GPU Cluster Autoscaling
+    - GPU Resource Quotas
+    - Model Monitoring & Metrics
+    - GPU Cost Management
 
   observability:
     - Prometheus
     - Datadog
     - Grafana
-    - SumoLogic
+    - Honeycomb
+    - Snyk
+
+  databases:
+    - PostgreSQL
+    - MySQL
+    - Redis
+    - Elasticsearch
+    - ClickHouse
+    - neonDB
+    - MSSQL
+
+  incident_management:
+    - PagerDuty
+    - OpsGenie
+    - Jira
+    - Confluence
+    - Slack
+
+  cost_optimization:
+    - AWS Cost Explorer
+    - Azure Cost Management
+    - Vantage
+    - opencost
+    - robusta
 
   programming:
     - Python
     - Bash
-    - PowerShell
 
 certifications:
+  microsoft_devops:
+    name: Microsoft: DevOps Engineer Expert
+    year: 2023
+
   aws_devops:
     name: AWS DevOps Engineer
     year: 2021
