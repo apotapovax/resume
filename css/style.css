@@ -16,44 +16,49 @@
     --transition: all 0.3s ease;
 }
 
-/* Animated Title Styles */
-.animated-title {
+/* Title Container */
+.title-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35em;
+    width: 100%;
+    text-align: center;
+}
+
+/* Animated Text */
+.animated-text {
     display: inline-block;
-    position: relative;
-    min-width: 80px;
 }
 
-.animated-title::before {
-    content: '';
-    position: absolute;
-    top: 50%;
-    left: 0;
-    right: 0;
-    width: 0;
-    height: 2px;
-    background: #ff3b3b;
-    animation: strike 6s steps(1, end) infinite;
-}
-
-.animated-title span {
-    visibility: hidden;
-}
-
-.animated-title::after {
+.animated-text::after {
     content: 'DevOps';
-    visibility: visible;
-    position: absolute;
-    left: 0;
-    animation: cycleText 6s steps(1, end) infinite;
-    white-space: nowrap;
+    animation: cycleText 9s infinite;
+}
+
+@keyframes cycleText {
+    0%, 24% {
+        content: 'DevOps';
+    }
+    25%, 49% {
+        content: 'SRE';
+    }
+    50%, 74% {
+        content: 'Platform';
+    }
+    75%, 100% {
+        content: 'Cloud';
+    }
 }
 
 /* Make the container adapt to the animated content */
 h2 {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    gap: 0.5em;  /* Add consistent spacing between words */
+    gap: 0.25em;  /* Reduce gap between words */
     flex-wrap: nowrap;  /* Prevent wrapping */
+    justify-content: center;  /* Center the content */
+    width: 100%;  /* Take full width for centering */
 }
 
 @keyframes strike {
@@ -232,12 +237,16 @@ nav ul li a:hover::after {
     -webkit-text-fill-color: transparent;
 }
 
+/* Profile Text Styles */
 .profile-text h2 {
     font-size: 1.8rem;
     color: var(--light-text);
     margin-bottom: 20px;
     text-align: center;
-    white-space: nowrap;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.35em;
 }
 
 .profile-text h2 span {
