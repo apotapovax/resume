@@ -2,54 +2,117 @@ personal_info:
   name: Alex Potapov
   title: Senior DevOps Engineer
   email: alexpotapov87@gmail.com
+  phone: "(435) 513-5214"
+  location: Cary, NC
   linkedin: https://linkedin.com/in/alex-potapov
   tagline: Building scalable cloud infrastructure and AI-powered solutions
 
 about: >
   Highly accomplished Senior DevOps Engineer with extensive experience in designing, implementing, 
-  and optimizing robust cloud and on-premise infrastructures. Proven expertise in ensuring the stability, 
-  performance, and security of mission-critical environments through advanced administration, automation, 
-  containerization, and comprehensive monitoring. Adept at troubleshooting complex real-time issues, 
-  driving efficiency, and fostering strong collaboration and documentation practices.
+    and optimizing robust cloud and on-premise infrastructures. Proven expertise in ensuring the stability, 
+    performance, and security of mission-critical environments through advanced administration, automation, 
+    containerization, and comprehensive monitoring. Adept at troubleshooting complex real-time issues, 
+    driving efficiency, and fostering strong collaboration and documentation practices.
 
 experience:
   fedex_dataworks:
     name: FedEx DataWorks
-    division: ShopRunner
-    period: 2020 - Present
+    location: Remote
+    period: Jan 2022 - Present
     role: Senior DevOps Engineer III
     achievements:
-      - Spearheaded end-to-end AI-powered software development projects using tools like Cursor
-      - Deployed and managed Model Context Protocol (MCP) servers for AI model integration
+      - Spearheaded end-to-end AI-powered software development projects, from task decomposition through implementation guides (module design, integration, and testing), using tools such as Cursor
+      - Deployed and managed Model Context Protocol (MCP) servers so AI models could integrate with external tools and data sources
+      - Diagnosed, debugged, and patched critical issues in the azurerm Terraform provider with AI-assisted workflows
+      - Designed and maintained reusable, production-grade Terraform modules, standardizing infrastructure provisioning across cloud environments
+      - Migrated legacy Jenkins pipelines to GitHub Actions, including self-hosted runners, improving CI/CD speed and scale
       - Managed enterprise-scale Kubernetes infrastructure spanning hundreds of clusters and thousands of microservices
-      - Designed and implemented enterprise-wide CI/CD templating framework with GitHub Actions, streamlining development across hundreds of production repositories
+      - Designed and implemented an enterprise-wide CI/CD templating framework with GitHub Actions across hundreds of production repositories
       - Implemented advanced ChatOps and GitOps automations
     technologies:
       - AWS
       - Azure
-      - Kubernetes
-      - Terraform
+      - Cloudflare
       - GitHub Actions
+      - Azure DevOps
+      - ArgoCD
+      - Jenkins
+      - Kubernetes
+      - Docker
+      - Terraform
+      - Helm
+      - Terragrunt
+      - CrossPlane
+      - Prometheus
+      - Grafana
+      - PagerDuty
+      - Python
+      - Bash
+
+  shoprunner:
+    name: ShopRunner
+    location: Remote
+    period: Nov 2020 - Dec 2021
+    role: CloudOps Engineer
+    achievements:
+      - Owned the health, performance, and stability of systems and servers
+      - Maintained and improved automation of development, testing, and integration of software releases and fixes
+      - Implemented GitHub Actions CI and CI templating for organization repositories
+      - Built and maintained Jenkins and GitHub Actions pipelines
+    technologies:
+      - AWS
+      - Azure
+      - Jenkins
+      - Spinnaker
+      - GitHub Actions
+      - Kubernetes
+      - Helm
+      - Docker
+      - Terraform
+      - Prometheus
+      - Grafana
+      - Datadog
+      - Sumo Logic
+      - PagerDuty
+      - Pingdom
+      - Cloud Custodian
+      - Python
+      - Bash
 
   renessans_roaming:
-    name: Renessans-Roaming
-    period: 2019 - 2020
+    name: Renessans-Roaming Ltd
+    location: Remote
+    period: Aug 2019 - Nov 2020
     role: DevOps Engineer
     achievements:
-      - Led automation of development, testing, and software integration processes
-      - Managed stable product releases and system health monitoring
-      - Implemented cloud solutions across AWS, GCP, and Azure
-      - Enhanced system performance and security through continuous monitoring
+      - Automated development, testing, and integration of software releases, and kept those releases stable
+      - Monitored system health and security after deployment, and turned production errors into tooling that prevented repeat issues
+      - Deployed upgrades and fixes across AWS, GCP, and Azure
+      - Ran security, performance, and availability tests, and maintained design and troubleshooting documentation
+      - Worked with management and the team to improve engineering tools, procedures, and data security
     technologies:
       - GCP
       - AWS
+      - Azure
+      - VMware
       - Docker
       - Kubernetes
+      - Terraform
+      - Ansible
+      - Helm
+      - Packer
       - Jenkins
+      - GitLab CI
+      - Travis CI
+      - Prometheus
+      - Zabbix
+      - Python
+      - Bash
+      - PowerShell
 
   step:
-    name: STEP
-    period: 2013 - 2019
+    name: STEP LLC
+    period: 2008 - 2019
     role: Senior System Administrator
     achievements:
       - Built complete server infrastructure for 400+ users from ground up
@@ -71,6 +134,8 @@ technical_skills:
     - ArgoCD
     - CircleCI
     - Spinnaker
+    - GitLab CI
+    - Travis CI
 
   infrastructure_as_code:
     - Terraform
@@ -78,11 +143,15 @@ technical_skills:
     - CrossPlane
     - Helm
     - Ansible
+    - Packer
 
   containerization:
     - Kubernetes (EKS, AKS, GKE)
     - Docker
     - Docker Compose
+
+  virtualization:
+    - VMware
 
   ai:
     - NVIDIA GPU Operators
@@ -96,6 +165,13 @@ technical_skills:
     - Datadog
     - Grafana
     - Honeycomb
+    - Sumo Logic
+    - Pingdom
+    - Zabbix
+
+  security_compliance:
+    - SOC 2
+    - Cloud Custodian
     - Snyk
 
   databases:
@@ -118,35 +194,57 @@ technical_skills:
     - AWS Cost Explorer
     - Azure Cost Management
     - Vantage
-    - opencost
-    - robusta
+    - OpenCost
+    - Robusta
 
   programming:
     - Python
     - Bash
+    - PowerShell
 
 certifications:
   microsoft_devops:
-    name: Microsoft: DevOps Engineer Expert
+    name: Microsoft DevOps Engineer Expert
     year: 2023
 
   aws_devops:
     name: AWS DevOps Engineer
+    issuer: A Cloud Guru
     year: 2021
-  
+
+  ztm_python:
+    name: Zero-To-Mastery Academy Python
+    year: 2020
+
   cisco_icnd2:
     name: Cisco ICND2
     year: 2019
-  
-  rhel7:
+
+  cisco_icnd1:
+    name: Cisco ICND1
+    year: 2019
+
+  rhel_rh134:
     name: RHEL7 (RH134)
     year: 2019
-  
+
+  rhel_rh124:
+    name: RHEL7 (RH124)
+    year: 2018
+
   ms_20742:
     name: Microsoft 20742
     year: 2018
 
+  ms_20740:
+    name: Microsoft 20740
+    year: 2017
+
+languages:
+  - English
+  - Russian
+
 education:
   institution: SPBGUAP
   degree: Computer Systems and Networks
-  period: 2006 - 2010 
+  period: 2006 - 2010
