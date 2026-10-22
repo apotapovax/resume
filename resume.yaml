@@ -11,7 +11,7 @@ about: >
   DevOps / CloudOps engineer with 16+ years in IT infrastructure and team leadership.
     Runs enterprise-scale Kubernetes platforms (hundreds of clusters, thousands of microservices)
     on AWS and Azure, builds Terraform and GitHub Actions frameworks used across hundreds of
-    repositories, and applies AI-assisted engineering (Cursor, MCP) to platform work.
+    repositories, and integrates AI into CI/CD pipelines.
 
 experience:
   fedex_dataworks:
@@ -21,11 +21,11 @@ experience:
     role: CloudOps Engineer III
     achievements:
       - Operate enterprise-scale Kubernetes infrastructure spanning hundreds of clusters and thousands of microservices across AWS and Azure
+      - Architected reusable, nested Terraform modules for AWS and Azure with built-in policy enforcement (tagging, encryption, network and security guardrails), making compliant-by-default provisioning the standard across teams
       - Designed an enterprise-wide CI/CD templating framework on GitHub Actions, adopted by hundreds of production repositories
       - Migrated legacy Jenkins pipelines to GitHub Actions with self-hosted runners, improving CI/CD speed and scalability
-      - Built and maintain reusable, production-grade Terraform modules that standardize provisioning across AWS and Azure
-      - Diagnosed and patched critical bugs in the azurerm Terraform provider using AI-assisted debugging workflows
-      - Led AI-assisted development with Cursor and deployed Model Context Protocol (MCP) servers connecting AI models to internal tools and data
+      - "Integrated AI into CI/CD: LLM agents in GitHub Actions workflows for automated PR review and pipeline failure analysis"
+      - Diagnosed and patched critical bugs in the azurerm Terraform provider
       - Implemented ChatOps and GitOps automations integrating external service APIs into CI/CD workflows
     technologies:
       - AWS

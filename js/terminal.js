@@ -13,11 +13,11 @@
             location: 'Remote',
             bullets: [
                 'Operates enterprise-scale Kubernetes: hundreds of clusters, thousands of microservices on AWS and Azure',
+                'Architected reusable, nested Terraform modules (AWS, Azure) with built-in policy enforcement: compliant by default',
                 'Designed the org-wide CI/CD templating framework on GitHub Actions, adopted by hundreds of repositories',
                 'Migrated legacy Jenkins pipelines to GitHub Actions with self-hosted runners',
-                'Builds reusable, production-grade Terraform modules for AWS and Azure',
-                'Patched critical bugs in the azurerm Terraform provider with AI-assisted debugging',
-                'Leads AI-assisted development with Cursor; deployed MCP servers connecting AI models to internal tools',
+                'Integrated AI into CI/CD: LLM agents in GitHub Actions for PR review and pipeline failure analysis',
+                'Patched critical bugs in the azurerm Terraform provider',
             ],
             stack: 'AWS, Azure, Kubernetes, Terraform, Terragrunt, Crossplane, Helm, ArgoCD, GitHub Actions, Prometheus, Grafana, Datadog',
         },
@@ -74,7 +74,7 @@
         ['iac', 'Terraform, Terragrunt, Crossplane, Ansible, Packer'],
         ['ci_cd', 'GitHub Actions, ArgoCD, Azure DevOps, Jenkins, GitLab CI'],
         ['observability', 'Prometheus, Grafana, Datadog, Honeycomb, Sumo Logic, PagerDuty'],
-        ['ai_gpu', 'MCP servers, Cursor, NVIDIA GPU Operator, GPU autoscaling'],
+        ['ai_gpu', 'AI in CI/CD (LLM agents), MCP, NVIDIA GPU Operator, GPU autoscaling'],
         ['security_finops', 'SOC 2, Snyk, Cloud Custodian, OpenCost, Vantage'],
         ['code_data', 'Python, Bash, PowerShell, PostgreSQL, Redis, Elasticsearch, ClickHouse'],
     ];
@@ -377,7 +377,7 @@
             span('bold', 'Alex Potapov') + ' — Senior DevOps / CloudOps Engineer',
             'Cary, NC · 16+ years in infrastructure, from racking servers to running hundreds of Kubernetes clusters.',
             'Builds platforms other engineers actually enjoy using: Terraform modules, GitHub Actions frameworks,',
-            'GitOps with ArgoCD, and lately AI-assisted engineering with Cursor and MCP.',
+            'GitOps with ArgoCD, and AI agents wired into CI/CD.',
         ]);
     }
 
