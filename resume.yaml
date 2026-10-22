@@ -21,11 +21,10 @@ experience:
     role: CloudOps Engineer III
     achievements:
       - Operate enterprise-scale Kubernetes infrastructure spanning hundreds of clusters and thousands of microservices across AWS and Azure
-      - Architected reusable, nested Terraform modules for AWS and Azure with built-in policy enforcement (tagging, encryption, network and security guardrails), making compliant-by-default provisioning the standard across teams
+      - "Own the Terraform platform: reusable, nested modules for AWS and Azure with built-in policy enforcement (tagging, encryption, network and security guardrails), including patching critical bugs in the azurerm provider, making compliant-by-default provisioning the standard across teams"
       - Designed an enterprise-wide CI/CD templating framework on GitHub Actions, adopted by hundreds of production repositories
       - Migrated legacy Jenkins pipelines to GitHub Actions with self-hosted runners, improving CI/CD speed and scalability
       - "Integrated AI into CI/CD: LLM agents in GitHub Actions workflows for automated PR review and pipeline failure analysis"
-      - Diagnosed and patched critical bugs in the azurerm Terraform provider
       - Implemented ChatOps and GitOps automations integrating external service APIs into CI/CD workflows
     technologies:
       - AWS

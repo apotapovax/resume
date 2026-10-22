@@ -13,11 +13,10 @@
             location: 'Remote',
             bullets: [
                 'Operates enterprise-scale Kubernetes: hundreds of clusters, thousands of microservices on AWS and Azure',
-                'Architected reusable, nested Terraform modules (AWS, Azure) with built-in policy enforcement: compliant by default',
+                'Owns the Terraform platform: reusable, nested modules (AWS, Azure) with built-in policy enforcement, incl. azurerm provider fixes',
                 'Designed the org-wide CI/CD templating framework on GitHub Actions, adopted by hundreds of repositories',
                 'Migrated legacy Jenkins pipelines to GitHub Actions with self-hosted runners',
                 'Integrated AI into CI/CD: LLM agents in GitHub Actions for PR review and pipeline failure analysis',
-                'Patched critical bugs in the azurerm Terraform provider',
             ],
             stack: 'AWS, Azure, Kubernetes, Terraform, Terragrunt, Crossplane, Helm, ArgoCD, GitHub Actions, Prometheus, Grafana, Datadog',
         },
