@@ -238,7 +238,7 @@
         <pre><code id="yamlContent"></code></pre>
     </div>
     <script>
-        fetch('resume.yaml')
+        fetch('resume.yaml', { cache: 'no-cache' })
             .then(response => response.text())
             .then(yaml => {
                 const yamlContent = document.getElementById('yamlContent');
