@@ -363,6 +363,7 @@
             `  ${span('green', 'cat certifications.yaml')}   training & certifications`,
             `  ${span('green', 'terraform plan')}            preview adding Alex to your team`,
             `  ${span('red', 'oncall')}                    ${span('red', 'take the pager. a production incident awaits')}`,
+            `  ${span('red', 'bug-hunt')}                  ${span('red', 'shoot bugs before they reach prod (arcade)')}`,
             `  ${span('green', 'contact')}                   how to reach Alex`,
             `  ${span('green', 'resume')}                    download the PDF`,
             `  ${span('green', 'clear')} / ${span('green', 'exit')}`,
@@ -479,7 +480,7 @@
 
     function ls() {
         return print([
-            `${span('blue', 'experience/')}  skills.yaml  certifications.yaml  README.md  ${span('red', 'pager.sh')}`,
+            `${span('blue', 'experience/')}  skills.yaml  certifications.yaml  README.md  ${span('red', 'pager.sh')}  ${span('red', 'bug-hunt')}`,
         ]);
     }
 
@@ -492,6 +493,22 @@
         ]);
     }
 
+    async function bugHunt() {
+        if (!window.BugHunt) return print([span('red', 'bug-hunt: dashboard failed to load. Try a refresh.')]);
+        await print([span('muted', 'Provisioning bug-hunt dashboard… grafana ready.')], { delay: 200 });
+        const r = await window.BugHunt.start(overlay.querySelector('.term-window'));
+        if (!r.played) return print([span('muted', 'Dashboard closed. The bugs are still out there.')]);
+        return print([
+            span('bold', 'bug-hunt summary'),
+            `  wave reached    ${span('yellow', r.wave)}`,
+            `  bugs squashed   ${span('green', r.squashed)}`,
+            `  score           ${span('green', r.score.toLocaleString('en-US'))}  ${span('muted', `(best ${r.best.toLocaleString('en-US')})`)}`,
+            `  aws bill        ${span('red', window.BugHunt.money(r.bill))}`,
+            '',
+            span('muted', "Alex fixes real bugs too. Run 'contact'."),
+        ], { cls: 'pre' });
+    }
+
     const SHELL = {
         help, '?': help, whoami,
         'kubectl get experience': experience, experience,
@@ -500,6 +517,7 @@
         'cat readme.md': readme, ls,
         'terraform plan': plan, 'terraform apply': apply,
         oncall: startGame, './pager.sh': startGame,
+        'bug-hunt': bugHunt, bughunt: bugHunt, './bug-hunt': bugHunt,
         contact, hire: contact, resume,
         clear: () => { output.innerHTML = ''; },
         exit: () => close(),
@@ -667,7 +685,7 @@
 
     const SHELL_CHIPS = [
         ['help'], ['whoami'], ['kubectl get experience'], ['cat skills.yaml'],
-        ['terraform plan'], ['oncall', 'hot'], ['contact'], ['resume'],
+        ['terraform plan'], ['oncall', 'hot'], ['bug-hunt', 'hot'], ['contact'], ['resume'],
     ];
 
     function renderChips() {
