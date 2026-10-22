@@ -1,6 +1,6 @@
 personal_info:
   name: Alex Potapov
-  title: Senior DevOps Engineer
+  title: Senior DevOps / CloudOps Engineer
   email: alexpotapov87@gmail.com
   phone: "(435) 513-5214"
   location: Cary, NC
@@ -8,27 +8,25 @@ personal_info:
   tagline: Building scalable cloud infrastructure and AI-powered solutions
 
 about: >
-  Highly accomplished Senior DevOps Engineer with extensive experience in designing, implementing, 
-    and optimizing robust cloud and on-premise infrastructures. Proven expertise in ensuring the stability, 
-    performance, and security of mission-critical environments through advanced administration, automation, 
-    containerization, and comprehensive monitoring. Adept at troubleshooting complex real-time issues, 
-    driving efficiency, and fostering strong collaboration and documentation practices.
+  DevOps / CloudOps engineer with 16+ years in IT infrastructure and team leadership.
+    Runs enterprise-scale Kubernetes platforms (hundreds of clusters, thousands of microservices)
+    on AWS and Azure, builds Terraform and GitHub Actions frameworks used across hundreds of
+    repositories, and applies AI-assisted engineering (Cursor, MCP) to platform work.
 
 experience:
   fedex_dataworks:
     name: FedEx DataWorks
     location: Remote
     period: Jan 2022 - Present
-    role: Senior DevOps Engineer III
+    role: CloudOps Engineer III
     achievements:
-      - Spearheaded end-to-end AI-powered software development projects, from task decomposition through implementation guides (module design, integration, and testing), using tools such as Cursor
-      - Deployed and managed Model Context Protocol (MCP) servers so AI models could integrate with external tools and data sources
-      - Diagnosed, debugged, and patched critical issues in the azurerm Terraform provider with AI-assisted workflows
-      - Designed and maintained reusable, production-grade Terraform modules, standardizing infrastructure provisioning across cloud environments
-      - Migrated legacy Jenkins pipelines to GitHub Actions, including self-hosted runners, improving CI/CD speed and scale
-      - Managed enterprise-scale Kubernetes infrastructure spanning hundreds of clusters and thousands of microservices
-      - Designed and implemented an enterprise-wide CI/CD templating framework with GitHub Actions across hundreds of production repositories
-      - Implemented advanced ChatOps and GitOps automations
+      - Operate enterprise-scale Kubernetes infrastructure spanning hundreds of clusters and thousands of microservices across AWS and Azure
+      - Designed an enterprise-wide CI/CD templating framework on GitHub Actions, adopted by hundreds of production repositories
+      - Migrated legacy Jenkins pipelines to GitHub Actions with self-hosted runners, improving CI/CD speed and scalability
+      - Built and maintain reusable, production-grade Terraform modules that standardize provisioning across AWS and Azure
+      - Diagnosed and patched critical bugs in the azurerm Terraform provider using AI-assisted debugging workflows
+      - Led AI-assisted development with Cursor and deployed Model Context Protocol (MCP) servers connecting AI models to internal tools and data
+      - Implemented ChatOps and GitOps automations integrating external service APIs into CI/CD workflows
     technologies:
       - AWS
       - Azure
@@ -52,13 +50,17 @@ experience:
   shoprunner:
     name: ShopRunner
     location: Remote
-    period: Nov 2020 - Dec 2021
-    role: CloudOps Engineer
+    period: Nov 2020 - Jan 2022
+    role: Senior Cloud Engineer
+    roles:
+      - role: Senior Cloud Engineer
+        period: Dec 2021 - Jan 2022
+      - role: Cloud Engineer
+        period: Nov 2020 - Dec 2021
     achievements:
-      - Owned the health, performance, and stability of systems and servers
-      - Maintained and improved automation of development, testing, and integration of software releases and fixes
-      - Implemented GitHub Actions CI and CI templating for organization repositories
-      - Built and maintained Jenkins and GitHub Actions pipelines
+      - Owned health, performance and stability of production systems and servers
+      - Implemented GitHub Actions CI and reusable CI templates for hundreds of organization repositories
+      - Built and maintained Jenkins and GitHub Actions pipelines for development, testing and release automation
     technologies:
       - AWS
       - Azure
@@ -85,11 +87,9 @@ experience:
     period: Aug 2019 - Nov 2020
     role: DevOps Engineer
     achievements:
-      - Automated development, testing, and integration of software releases, and kept those releases stable
-      - Monitored system health and security after deployment, and turned production errors into tooling that prevented repeat issues
-      - Deployed upgrades and fixes across AWS, GCP, and Azure
-      - Ran security, performance, and availability tests, and maintained design and troubleshooting documentation
-      - Worked with management and the team to improve engineering tools, procedures, and data security
+      - Automated build, test and release of software across AWS, GCP and Azure, keeping releases stable
+      - Turned recurring production errors into tooling that prevented repeat incidents
+      - Ran security, performance and availability testing; maintained design and troubleshooting docs
     technologies:
       - GCP
       - AWS
@@ -111,14 +111,38 @@ experience:
       - PowerShell
 
   step:
-    name: STEP LLC
+    name: STEP Construction
+    location: St. Petersburg, Russia
     period: 2008 - 2019
-    role: Senior System Administrator
+    role: Lead Systems Administrator
+    roles:
+      - role: Lead Systems Administrator
+        period: 2016 - 2019
+      - role: Senior Systems Administrator
+        period: 2012 - 2016
+      - role: Systems Administrator
+        period: 2008 - 2012
     achievements:
-      - Built complete server infrastructure for 400+ users from ground up
-      - Led team of 7 system administrators across multiple locations
-      - Implemented HA VMware multicluster geo-allocated infrastructure
-      - Managed Windows/Linux systems and core infrastructure components
+      - Led a team of 7 sysadmins across HQ and remote branches; partnered with the CEO and CIO on the IT roadmap
+      - Led migrations of Exchange 2007→2016, AD 2008→2016, Windows Server 2008→1809 and VMware ESX 5.0→6.7
+      - "Integrated on-prem infrastructure with AWS and GCP: site-to-site VPN, cloud workloads, off-site backups"
+      - Introduced Infrastructure as Code (Terraform, Ansible, Packer) into the enterprise environment
+      - Built the complete server infrastructure for 400+ users from the ground up
+      - Built HA geo-distributed VMware clusters and 2-node vSAN / Hyper-V clusters in branches; rolled out Veeam and Zabbix
+      - Maintained Windows and Linux servers, Active Directory, DNS, DHCP, storage and network equipment
+    technologies:
+      - VMware vSphere/vSAN
+      - Hyper-V
+      - Windows Server
+      - Linux
+      - Active Directory
+      - Exchange
+      - Veeam
+      - Zabbix
+      - AWS
+      - GCP
+      - Terraform
+      - Ansible
 
 technical_skills:
   cloud_platforms:
@@ -205,46 +229,28 @@ technical_skills:
 certifications:
   microsoft_devops:
     name: Microsoft DevOps Engineer Expert
+    type: course
     year: 2023
 
   aws_devops:
     name: AWS DevOps Engineer
     issuer: A Cloud Guru
+    type: course
     year: 2021
 
-  ztm_python:
-    name: Zero-To-Mastery Academy Python
-    year: 2020
+  red_hat:
+    name: Red Hat RH124, RH134
+    year: 2018 - 2019
 
-  cisco_icnd2:
-    name: Cisco ICND2
+  cisco:
+    name: Cisco ICND1, ICND2
     year: 2019
 
-  cisco_icnd1:
-    name: Cisco ICND1
-    year: 2019
-
-  rhel_rh134:
-    name: RHEL7 (RH134)
-    year: 2019
-
-  rhel_rh124:
-    name: RHEL7 (RH124)
-    year: 2018
-
-  ms_20742:
-    name: Microsoft 20742
-    year: 2018
-
-  ms_20740:
-    name: Microsoft 20740
-    year: 2017
-
-languages:
-  - English
-  - Russian
+  microsoft_windows_server:
+    name: Microsoft 20740, 20742 (Windows Server)
+    year: 2017 - 2018
 
 education:
-  institution: SPBGUAP
+  institution: SPbGUAP (St. Petersburg State University of Aerospace Instrumentation)
   degree: Computer Systems and Networks
   period: 2006 - 2010

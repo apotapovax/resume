@@ -334,6 +334,12 @@ nav ul li a:hover::after {
     margin-bottom: 15px;
 }
 
+.role-path {
+    color: var(--light-text);
+    font-size: 0.9rem;
+    margin: -8px 0 15px;
+}
+
 .experience-list {
     list-style-type: none;
 }
