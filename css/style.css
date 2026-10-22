@@ -36,21 +36,6 @@
     animation: cycleText 9s infinite;
 }
 
-@keyframes cycleText {
-    0%, 24% {
-        content: 'DevOps';
-    }
-    25%, 49% {
-        content: 'SRE';
-    }
-    50%, 74% {
-        content: 'Platform';
-    }
-    75%, 100% {
-        content: 'Cloud';
-    }
-}
-
 /* Make the container adapt to the animated content */
 h2 {
     display: inline-flex;
@@ -87,10 +72,10 @@ h2 {
         content: 'DevOps';
     }
     34%, 66% {
-        content: 'SRE';
+        content: 'CloudOps';
     }
     67%, 100% {
-        content: 'Cloud';
+        content: 'Platform';
     }
 }
 
