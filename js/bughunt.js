@@ -191,6 +191,7 @@
 
     function billingScreen() {
         s.phase = 'modal';
+        if (typeof window.track === 'function') window.track('bughunt-billing', 'AWS billing modal');
         showScreen(`
             <h3 style="color:${C.orange}">AWS Billing: payment required</h3>
             <p>Your estimated bill for this month is <b style="color:${C.red}">${money(s.bill)}</b>.
@@ -215,6 +216,7 @@
         s.phase = 'play';
         s.played = true;
         s.player.x = W / 2;
+        if (typeof window.track === 'function') window.track('bughunt-start', 'Started a round');
         hideScreen();
         toastsEl.innerHTML = '';
         startWave();
@@ -273,6 +275,7 @@
     function applyPowerup(type) {
         const p = s.player;
         floater(POWERUPS[type].label, p.x, H - 70, POWERUPS[type].color);
+        if (typeof window.track === 'function') window.track('bughunt-powerup-' + type, POWERUPS[type].label);
         switch (type) {
             case 'aws': {
                 const caseId = Math.floor(rand(1e9, 9e9));
@@ -372,6 +375,7 @@
             localStorage.setItem(BEST_KEY, String(best));
         }
         render();
+        if (typeof window.track === 'function') window.track('bughunt-over', `wave ${s.wave} · score ${s.score}`);
         overScreen();
     }
 

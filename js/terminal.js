@@ -459,6 +459,32 @@
         return contact();
     }
 
+    function track(path, title) {
+        if (typeof window.track === 'function') window.track(path, title);
+    }
+
+    function commandEvent(cmd) {
+        const c = cmd.toLowerCase().trim();
+        if (c === 'help' || c === '?') return 'cmd-help';
+        if (c === 'whoami') return 'cmd-whoami';
+        if (c === 'kubectl get experience' || c === 'experience') return 'cmd-experience';
+        if (c.startsWith('kubectl describe')) return 'cmd-describe';
+        if (c === 'cat skills.yaml' || c === 'skills') return 'cmd-skills';
+        if (c === 'cat certifications.yaml' || c === 'certs' || c === 'certifications') return 'cmd-certs';
+        if (c === 'terraform plan') return 'cmd-plan';
+        if (c === 'terraform apply') return 'cmd-apply';
+        if (c === 'oncall' || c === './pager.sh') return 'cmd-oncall';
+        if (c === 'bug-hunt' || c === 'bughunt' || c === './bug-hunt') return 'cmd-bughunt';
+        if (c === 'contact' || c === 'hire') return 'cmd-contact';
+        if (c === 'resume') return 'cmd-resume';
+        if (c === 'ls') return 'cmd-ls';
+        if (c === 'cat readme.md') return 'cmd-readme';
+        if (c === 'clear') return 'cmd-clear';
+        if (c === 'exit' || c === 'history') return 'cmd-' + c;
+        if (/^(sudo|rm |git |vim|vi|nano|emacs|ping|coffee|brew|kubectl |echo |date$|cd )/.test(c)) return 'cmd-easter';
+        return 'cmd-other';
+    }
+
     function contact() {
         return print([
             `email:     <a href="mailto:alexpotapov87@gmail.com">alexpotapov87@gmail.com</a>`,
@@ -474,6 +500,7 @@
         a.href = PDF;
         a.download = '';
         a.click();
+        track('click-pdf', 'Download PDF from terminal');
         return print([span('green', `Downloading ${PDF}…`)]);
     }
 
@@ -494,9 +521,14 @@
 
     async function bugHunt() {
         if (!window.BugHunt) return print([span('red', 'bug-hunt: dashboard failed to load. Try a refresh.')]);
+        track('bughunt-open', 'Opened bug-hunt dashboard');
         await print([span('muted', 'Provisioning bug-hunt dashboard… grafana ready.')], { delay: 200 });
         const r = await window.BugHunt.start(overlay.querySelector('.term-window'));
-        if (!r.played) return print([span('muted', 'Dashboard closed. The bugs are still out there.')]);
+        if (!r.played) {
+            track('bughunt-quit', 'Closed bug-hunt without playing');
+            return print([span('muted', 'Dashboard closed. The bugs are still out there.')]);
+        }
+        track('bughunt-played', `wave ${r.wave} · score ${r.score}`);
         return print([
             span('bold', 'bug-hunt summary'),
             `  wave reached    ${span('yellow', r.wave)}`,
@@ -566,6 +598,7 @@
         const scenario = choices[Math.floor(Math.random() * choices.length)];
         lastScenario = scenario.id;
         game = { s: scenario, minutes: 0, budget: 100, commands: 0, hint: 0, investigated: new Set() };
+        track('oncall-start', scenario.id);
         updatePrompt();
         renderChips();
 
@@ -592,11 +625,13 @@
     async function runGame(cmd) {
         const key = cmd.toLowerCase();
         if (key === 'exit' || key === 'quit') {
+            track('oncall-abandon', 'Handed off pager');
             await print([span('yellow', 'Pager handed off to the secondary. They will remember this.')]);
             return endGame();
         }
         if (key === 'status') return print([budgetBar()]);
         if (key === 'hint') {
+            track('oncall-hint');
             const hints = game.s.hints;
             await print([span('purple', `hint: ${hints[Math.min(game.hint, hints.length - 1)]}`)]);
             game.hint += 1;
@@ -623,10 +658,12 @@
             game.investigated.add(action);
             await print(game.s.clues[action] || HEALTHY[action], { delay: 30, cls: 'pre' });
         } else if (action === game.s.fix) {
+            track('oncall-fix-' + action, 'Correct fix');
             await print(game.s.resolved.map((l) => span('green', l)), { delay: 300 });
             return finishGame(true);
         } else {
             game.minutes += 3;
+            track('oncall-wrong-' + action, 'Wrong fix');
             await print([span('yellow', game.s.wrong[action])], { delay: 0 });
         }
 
@@ -638,6 +675,7 @@
     async function finishGame(won) {
         const { s, minutes, commands } = game;
         game.budget = Math.max(0, 100 - minutes * s.burn);
+        track(won ? 'oncall-win' : 'oncall-lose', `${s.id} · ${minutes}m`);
         line();
         if (!won) {
             await print([
@@ -722,6 +760,12 @@
         if (!cmd) return;
         history.push(cmd);
         historyIndex = history.length;
+        if (game) {
+            const action = resolveGameCommand(cmd);
+            if (action) track('oncall-cmd-' + action);
+        } else {
+            track(commandEvent(cmd));
+        }
 
         busy = true;
         input.disabled = true;
@@ -834,6 +878,7 @@
 
     function open() {
         if (!overlay) build();
+        if (overlay.hidden) track('terminal-open', 'Opened terminal');
         overlay.hidden = false;
         document.body.style.overflow = 'hidden';
         if (!booted) boot();
@@ -841,7 +886,8 @@
     }
 
     function close() {
-        if (!overlay) return;
+        if (!overlay || overlay.hidden) return;
+        track('terminal-close', 'Closed terminal');
         overlay.hidden = true;
         document.body.style.overflow = '';
         if (location.hash === '#terminal') window.history.replaceState(null, '', location.pathname);
